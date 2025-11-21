@@ -21,4 +21,9 @@ public class MenuController : MonoBehaviour
 
         Time.timeScale = isPaused ? 0f : 1f;
     }
+
+    public void ResetMenu()
+    {
+        ShowOrHidePauseMenu();
+    }
 }
