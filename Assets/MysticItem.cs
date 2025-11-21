@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class MysticItem : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private UnityEventOnTrigger trigger;
+    private MysticCounter mysticCounter;
     void Start()
     {
-        
+        mysticCounter = GameObject.Find("MysticItemCounter").GetComponent<MysticCounter>();
+        trigger = GetComponent<UnityEventOnTrigger>();
+        trigger.onTriggerEnter.AddListener(mysticCounter.UpdateMysticItemText);
     }
 
     // Update is called once per frame
