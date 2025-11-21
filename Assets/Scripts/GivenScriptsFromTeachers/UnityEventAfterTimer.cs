@@ -33,7 +33,7 @@ public class UnityEventAfterTimer : MonoBehaviour
         if (timerRunning)
         {
             timerLength -= Time.deltaTime;
-            Debug.Log($"Time left: {(int)timerLength}");
+            //Debug.Log($"Time left: {(int)timerLength}");
 
             if (displayText)
             {

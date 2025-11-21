@@ -15,6 +15,7 @@ public class MysticCounter : MonoBehaviour
 
     private void Awake()
     {
+        timerStarted = false;
         mysticItemText = GetComponent<TextMeshProUGUI>();
     }
 
@@ -26,8 +27,17 @@ public class MysticCounter : MonoBehaviour
         if (timerStarted)
         {
             pickedUpSinceTimerStarted++;
-            if(pickedUpSinceTimerStarted == 3) onCollectedItems?.Invoke();
+            if (pickedUpSinceTimerStarted == 3)
+            {
+                Debug.Log("Picked up since timer started");
+                onCollectedItems?.Invoke();
+            }
         }
         mysticItemText.text = $"Mystic Items: {counter + 1}";
+    }
+
+    public void StartMysticTimer()
+    {
+        timerStarted = true;
     }
 }
